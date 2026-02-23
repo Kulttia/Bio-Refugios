@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-K99MDLFF');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K99MDLFF');</script>
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refugios | Libros & Café</title>
-    
+
     <!-- Google Fonts: Playfair Display (Serif) & Montserrat (Sans-Serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
+        rel="stylesheet">
 
     <style>
         /* --- Modern Heritage & Retro Variables --- */
         :root {
-            --bg-cream: #F5E9E2;       /* Fondo crema minimalista */
-            --main-color: #4e342e;     /* Café oscuro de la marca */
-            --border-faint: rgba(78, 52, 46, 0.15); /* Líneas separadoras tenues */
+            --bg-cream: #F5E9E2;
+            /* Fondo crema minimalista */
+            --main-color: #4e342e;
+            /* Café oscuro de la marca */
+            --border-faint: rgba(78, 52, 46, 0.15);
+            /* Líneas separadoras tenues */
         }
 
         /* --- Reset & Base --- */
@@ -31,7 +40,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            -webkit-tap-highlight-color: transparent; 
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -62,10 +71,14 @@
 
         .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem; /* Tamaño ajustado para el nuevo texto */
-            font-weight: 400; /* Menos peso, más elegante */
-            font-style: italic; /* Leve cursiva añadida */
-            letter-spacing: -0.5px; /* Sutil */
+            font-size: 3rem;
+            /* Tamaño ajustado para el nuevo texto */
+            font-weight: 400;
+            /* Menos peso, más elegante */
+            font-style: italic;
+            /* Leve cursiva añadida */
+            letter-spacing: -0.5px;
+            /* Sutil */
             color: var(--main-color);
             line-height: 1.1;
             margin-bottom: 15px;
@@ -98,7 +111,8 @@
         .links-group {
             display: flex;
             flex-direction: column;
-            gap: 16px; /* Espaciado ajustado para las sombras 3D */
+            gap: 16px;
+            /* Espaciado ajustado para las sombras 3D */
         }
 
         /* --- Botones Minimalistas Retro 3D --- */
@@ -108,18 +122,18 @@
             justify-content: center;
             width: 100%;
             padding: 16px 20px;
-            
+
             /* Colores Base */
             background-color: var(--bg-cream);
             color: var(--main-color) !important;
-            
+
             /* Bordes rectos y gruesos estilo imprenta/retro */
             border: 2px solid var(--main-color);
-            border-radius: 0; 
-            
+            border-radius: 0;
+
             /* Sombra Sólida 3D */
             box-shadow: 4px 4px 0px var(--main-color);
-            
+
             /* Tipografía de botón */
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
@@ -127,7 +141,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             text-decoration: none;
-            
+
             /* Transiciones rápidas para sensación física */
             transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s, color 0.2s;
             cursor: pointer;
@@ -142,7 +156,8 @@
         .btn-link:hover {
             transform: translate(2px, 2px);
             box-shadow: 2px 2px 0px var(--main-color);
-            background-color: #f1dfd3; /* Crema ligeramente más oscuro */
+            background-color: #f1dfd3;
+            /* Crema ligeramente más oscuro */
         }
 
         /* Efecto Active (Click): Botón se hunde completamente e invierte color */
@@ -209,21 +224,49 @@
             border-color: var(--main-color);
         }
 
+        /* --- Imagen Retro con Marco --- */
+        .retro-image-container {
+            width: 100%;
+            margin-top: 20px;
+            padding: 0 10px;
+            /* Un poco de respiro lateral */
+            display: flex;
+            justify-content: center;
+        }
+
+        .retro-image {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid var(--main-color);
+            box-shadow: 6px 6px 0px var(--main-color);
+            border-radius: 4px;
+            /* Un toque muy leve de redondez para lo retro */
+            display: block;
+            /* Filtro opcional para darle un aire ligeramente más vintage cálido */
+            filter: sepia(0.2) contrast(1.1);
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K99MDLFF"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K99MDLFF" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="container">
-        
+
         <!-- HEADER -->
         <header>
             <h1 class="logo-text">Bienvenido<br>a Refugios</h1>
             <p class="subtitle">4 años combinando libros y café para crear un espacio para la pausa.</p>
+
+            <!-- Imagen Retro -->
+            <div class="retro-image-container">
+                <img src="assets/images/refugios_fachada.jpg" alt="Fachada de Refugios Libros y Café"
+                    class="retro-image">
+            </div>
         </header>
 
         <!-- CATEGORÍA: NOSOTROS -->
@@ -272,7 +315,8 @@
                 <a href="http://wa.link/qhvs2f" id="btn-hablemos-ws" class="btn-link" target="_blank">
                     Hablemos
                 </a>
-                <a href="https://g.page/r/CWMW660smZldEBM/review" id="btn-dejar-resena" class="btn-link" target="_blank">
+                <a href="https://g.page/r/CWMW660smZldEBM/review" id="btn-dejar-resena" class="btn-link"
+                    target="_blank">
                     Déjanos una reseña
                 </a>
             </div>
@@ -282,30 +326,40 @@
         <footer>
             <div class="social-icons">
                 <!-- Instagram -->
-                <a href="https://www.instagram.com/libreriarefugios" id="icon-instagram" target="_blank" aria-label="Instagram">
-                    <svg class="social-icon" fill="currentColor" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                <a href="https://www.instagram.com/libreriarefugios" id="icon-instagram" target="_blank"
+                    aria-label="Instagram">
+                    <svg class="social-icon" fill="currentColor" viewBox="0 0 448 512"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
                     </svg>
                 </a>
 
                 <!-- TikTok -->
                 <a href="https://www.tiktok.com/@libreriarefugios" id="icon-tiktok" target="_blank" aria-label="TikTok">
-                    <svg class="social-icon" fill="currentColor" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17h0A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z"/>
+                    <svg class="social-icon" fill="currentColor" viewBox="0 0 448 512"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17h0A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z" />
                     </svg>
                 </a>
 
                 <!-- Facebook -->
-                <a href="https://www.facebook.com/libreriarefugios" id="icon-facebook" target="_blank" aria-label="Facebook">
-                    <svg class="social-icon" fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/>
+                <a href="https://www.facebook.com/libreriarefugios" id="icon-facebook" target="_blank"
+                    aria-label="Facebook">
+                    <svg class="social-icon" fill="currentColor" viewBox="0 0 512 512"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
                     </svg>
                 </a>
             </div>
 
-            <p class="copyright">&copy; 2026 <a href="https://refugios.co/" id="link-footer-web" target="_blank">Refugios.co</a></p>
+            <p class="copyright">&copy; 2026 <a href="https://refugios.co/" id="link-footer-web"
+                    target="_blank">Refugios.co</a></p>
         </footer>
     </div>
 
 </body>
+
 </html>
