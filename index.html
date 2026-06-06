@@ -248,6 +248,30 @@
             /* Soporte en todos los navegadores y color de reserva */
             background-color: var(--bg-cream);
         }
+
+        /* --- Libro Destacado --- */
+        .featured-book-container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border: 2px dashed var(--main-color);
+            padding: 12px;
+            background-color: rgba(78, 52, 46, 0.03);
+            margin-bottom: 8px;
+        }
+
+        .featured-book-img {
+            width: 65px;
+            height: auto;
+            border: 2px solid var(--main-color);
+            box-shadow: 3px 3px 0px var(--main-color);
+            flex-shrink: 0;
+        }
+
+        .btn-featured {
+            flex: 1;
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -303,6 +327,12 @@
         <div class="category">
             <h3 class="category-title">Los libros</h3>
             <div class="links-group">
+                <div class="featured-book-container">
+                    <img src="./assets/images/la_ultima_niebla.jpg" alt="Portada de La última niebla" class="featured-book-img">
+                    <a href="https://refugios.co/producto/la-ultima-niebla-la-amortajada/" id="btn-historia-destacada" class="btn-link btn-featured" target="_blank">
+                        Historia destacada
+                    </a>
+                </div>
                 <a href="https://refugios.co/" id="btn-explorar-libros" class="btn-link" target="_blank">
                     Explorar Catálogo
                 </a>
