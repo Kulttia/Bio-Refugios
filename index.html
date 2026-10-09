@@ -274,6 +274,52 @@
             text-align: center;
             line-height: 1.4;
         }
+
+        /* --- Promo Booketmanía 3x2 (sello tipográfico en vez de portada) --- */
+        .promo-badge {
+            width: 65px;
+            height: 81px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--main-color);
+            color: var(--bg-cream);
+            border: 2px solid var(--main-color);
+            box-shadow: 3px 3px 0px var(--main-color);
+            outline: 1px solid var(--bg-cream);
+            outline-offset: -5px;
+        }
+
+        .promo-badge-num {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        .promo-badge-label {
+            font-size: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 6px;
+        }
+
+        .promo-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .promo-note {
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.4;
+        }
     </style>
 </head>
 
@@ -343,6 +389,20 @@
                         Historia destacada
                     </a>
                 </div> -->
+                <!-- Booketmanía 3x2: se oculta sola después del 31 oct 2026 (ver script al final) -->
+                <div class="featured-book-container" id="promo-booketmania" data-hasta="2026-10-31">
+                    <div class="promo-badge" aria-hidden="true">
+                        <span class="promo-badge-num">3x2</span>
+                        <span class="promo-badge-label">Booket</span>
+                    </div>
+                    <div class="promo-body">
+                        <a href="https://refugios.co/booketmania/" id="btn-booketmania"
+                            class="btn-link btn-featured" target="_blank">
+                            Booketmanía 3x2
+                        </a>
+                        <p class="promo-note">Booket, Austral y Maxi Tusquets · hasta el 31 de octubre</p>
+                    </div>
+                </div>
                 <a href="https://refugios.co/" id="btn-explorar-libros" class="btn-link" target="_blank">
                     Explorar Catálogo
                 </a>
@@ -406,6 +466,12 @@
     <!-- Script para rastreo avanzado de Clics (GTM / Analytics) -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Promos con fecha de fin: se quitan al día siguiente de data-hasta (hora local)
+            document.querySelectorAll('[data-hasta]').forEach(function (promo) {
+                var fin = new Date(promo.getAttribute('data-hasta') + 'T23:59:59');
+                if (new Date() > fin) promo.remove();
+            });
+
             // Selecciona todos los enlaces que tienen un ID (todos los botones y redes)
             var trackableLinks = document.querySelectorAll('a[id]');
 
